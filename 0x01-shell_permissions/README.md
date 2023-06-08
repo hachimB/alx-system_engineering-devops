@@ -1,0 +1,1 @@
+This directory contains some files in connection shell permissions.

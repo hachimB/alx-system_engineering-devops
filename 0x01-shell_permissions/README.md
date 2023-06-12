@@ -1,1 +1,1 @@
-This directory contains some files in connection shell permissions.
+this directory conatains some files which execute some shell permissions commands.

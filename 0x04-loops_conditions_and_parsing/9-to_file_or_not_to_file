@@ -18,7 +18,7 @@ then
     fi
     if [ ! -f "$file" ]
     then
-	# echo "we don't print anything"
+	: # This is a no-operation command
     fi
 else
     echo "school file does not exist"

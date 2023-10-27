@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #displays The content of the current directory In a list format.
-for file in *
+for file in [!_.]*
 do
-    if [ -s "$file" ]
+    if [ -f "$file" ]
     then
 	new_name=$(echo "$file" | cut -d'-' -f2-)
 	echo "$new_name"

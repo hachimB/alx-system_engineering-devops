@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script configure The client configuration file
+HostName 35.175.130.80
+User ubuntu
+IdentityFile ~/.ssh/school

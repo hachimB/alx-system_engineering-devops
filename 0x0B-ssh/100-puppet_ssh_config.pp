@@ -1,7 +1,7 @@
 # Client configuration file (w/ Puppet)
-file { '~/.ssh/config':
+file { "${HOME}/.ssh/config":
   ensure  => 'file',
-  content => 'HostName 35.175.130.80
+  content => "HostName 35.175.130.80
 User ubuntu
-IdentityFile ~/.ssh/school',
+IdentityFile ${HOME}/.ssh/school",
 }

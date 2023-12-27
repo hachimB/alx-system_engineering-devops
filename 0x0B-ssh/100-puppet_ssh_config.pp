@@ -1,11 +1,14 @@
 # Client configuration file (w/ Puppet)
-file { "${::home}/.ssh":
-  ensure => 'directory',
+file_line { 'Turn off passwd auth':
+  path   => '/etc/ssh/ssh_config',
+  line   => 'PasswordAuthentication no',
+  match  => '^#?PasswordAuthentication',
+  ensure => 'present',
 }
 
-file { "${::home}/.ssh/config":
-  ensure  => 'file',
-  content => "HostName 35.175.130.80
-User ubuntu
-IdentityFile ${::home}/.ssh/school",
+file_line { 'Declare identity file':
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile ~/.ssh/school',
+  match  => '^#?IdentityFile',
+  ensure => 'present',
 }

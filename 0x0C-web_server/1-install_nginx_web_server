@@ -2,20 +2,5 @@
 # This script allow us to nstall nginx web server
 apt-get -y update
 apt-get -y install nginx
-#echo 'Hello World!' | tee /var/www/html/index.html
-#service nginx restart
-echo "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        echo 'Hello World!';
-    }
-}" > /etc/nginx/sites-available/default
-
-kill -s HUP $(pgrep nginx)
+echo 'Hello World!' | tee /var/www/html/index.html
+service nginx restart

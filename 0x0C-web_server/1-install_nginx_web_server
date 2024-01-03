@@ -11,5 +11,5 @@ sh -c 'echo "server {
         root /var/www/html;
         index index.html;
     }
-}" >> /etc/nginx/sites-available/default'
+}" > /etc/nginx/sites-available/default'
 service nginx restart

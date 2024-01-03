@@ -2,7 +2,7 @@
 # This script allow us to nstall nginx web server
 apt-get -y update
 apt-get -y install nginx
-echo "Hello World!" | tee /var/www/html/index.html
+sh -c 'echo "Hello World!" | tee /var/www/html/index.html'
 sh -c 'echo "server {
     listen 80;
     server_name localhost;
@@ -11,5 +11,5 @@ sh -c 'echo "server {
         root /var/www/html;
         index index.html;
     }
-}" > /etc/nginx/sites-available/default'
+}" >> /etc/nginx/sites-available/default'
 service nginx restart

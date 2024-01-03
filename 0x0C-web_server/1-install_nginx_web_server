@@ -2,4 +2,4 @@
 # This script allow us to nstall nginx web server
 apt-get -y install nginx
 echo 'Hello World!' | sudo tee /var/www/html/index.html
-sudo service nginx restart
+service nginx restart

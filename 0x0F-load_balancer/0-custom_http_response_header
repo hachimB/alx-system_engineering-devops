@@ -9,5 +9,5 @@
 #    add_header X-Served-By $HOSTNAME;
 #    }
 #}' | tee /etc/nginx/sites-available/default"
-sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+sudo sed -i "/default_server _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 sudo service nginx restart

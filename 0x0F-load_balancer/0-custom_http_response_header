@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Configuration of a Header response.
+sudo apt-get update
+sudo apt-get install -y nginx
 HOSTNAME=$(hostname)
 sh -c "echo 'server {
     listen 80 default_server;

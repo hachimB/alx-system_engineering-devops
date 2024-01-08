@@ -8,6 +8,5 @@ sh -c "echo '
     location / {
     add_header X-Served-By $HOSTNAME;
     }
-}' | sudo tee /etc/nginx/sites-available/default"
-sudo nginx -t
+}' | tee /etc/nginx/sites-available/default"
 sudo service nginx restart

@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # Configuration of a Header response.
-#sh -c "echo '
-#    server {
-#    listen 80 default_server;
-#    listen [::]:80 default_server;
+HOSTNAME=$(hostname)
+sh -c "echo 'server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
     
-#    location / {
-#    add_header X-Served-By $HOSTNAME;
-#    }
-#}' | tee /etc/nginx/sites-available/default"
-sudo sed -i "/default_server _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+    location / {
+    add_header X-Served-By '\"'$HOSTNAME'\"';
+    }
+}' | tee /etc/nginx/sites-available/default"
 sudo service nginx restart

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Debugging_1
+
+sudo apt-get update
+sudo apt-y install nginx -y
+
+sh -c "echo 'server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+}' | sudo tee /etc/nginx/sites-available/default"
+
+sudo service nginx restart

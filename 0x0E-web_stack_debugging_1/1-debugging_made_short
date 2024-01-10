@@ -2,3 +2,4 @@
 # Debugging
 sudo service nginx restart
 sudo kill "$(pgrep nginx | head -n 1)"
+

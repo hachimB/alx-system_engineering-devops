@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Debugging
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo kill "$(pgrep nginx | head -n 1)"
-
+sudo service nginx 

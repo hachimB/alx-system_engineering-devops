@@ -1,0 +1,11 @@
+frontend http_front
+    bind *:80
+    stats uri /haproxy?stats
+    bind *:443 ssl crt /etc/haproxy/certs/www.mrhtech.tech.pem
+    redirect scheme https code 301 if !{ ssl_fc }
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server 433189-web-01 100.25.200.71:80 check
+    server 433189-web-02 54.160.97.207:80 check

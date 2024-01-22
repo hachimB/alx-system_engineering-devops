@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# configure nginx to run  as a nginx user.
+sudo apt update
+sudo apt-get install nginx -y
+sudo useradd -r -d /var/lib/nginx -s /sbin/nologin -U nginx
+sudo sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -i 's/listen 80;/listen 8080;/' /etc/nginx/sites-available/default
+sudo service nginx restart

@@ -10,5 +10,3 @@ def number_of_subscribers(subreddit):
     if response.status_code == 200:
         return response.json()['data']['subscribers']
     return 0
-# response = requests.get("https://www.reddit.com/r/programming/about.json", headers={"User-Agent": "app"})
-# print(response.json());

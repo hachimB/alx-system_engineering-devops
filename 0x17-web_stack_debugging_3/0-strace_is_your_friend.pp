@@ -1,3 +1,4 @@
+# fixing Apache2
 file { '/etc/apache2/apache2.conf':
   ensure  => present,
   content => template('apache/apache2.conf.erb'),

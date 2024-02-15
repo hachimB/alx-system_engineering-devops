@@ -1,11 +1,5 @@
-# fixing Apache2
-file { '/etc/apache2/apache2.conf':
-  ensure  => present,
-  content => template('apache/apache2.conf.erb'),
-  notify  => Service['apache2'],
-}
-
-service { 'apache2':
-  ensure => running,
-  enable => true,
+# Problem : "phpp" instead of "php"
+exec{ 'wordpress-issue':
+command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+path    => '/usr/local/bin/:/bin/'
 }

@@ -55,6 +55,6 @@ location / {
 }
 
 location /static {
-        alias web_dynamic/static/;
+        alias web_dynamic/static;
 }
 }

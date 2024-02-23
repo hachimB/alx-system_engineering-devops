@@ -1,6 +1,10 @@
-# 0-the_sky_is_the_limit_not.pp
-exec { 'increase-open-files-limit':
-  command => '/bin/echo "* soft nofile 4096" >> /etc/security/limits.conf && /bin/echo "* hard nofile 8192" >> /etc/security/limits.conf',
-  path    => ['/bin', '/usr/bin'],
-  unless  => '/bin/grep -q "* soft nofile 4096" /etc/security/limits.conf && /bin/grep -q "* hard nofile 8192" /etc/security/limits.conf',
+exec { 'Fix-nginx':
+command => '/bin/sed -i "s/15/4096/g" /etc/default/nginx',
+path    => '/usr/local/bin/:/bin/',
+}
+
+# Restart nginx
+exec {'restart':
+command => '/etc/init.d/nginx restart',
+path    => '/etc/init.d/',
 }
